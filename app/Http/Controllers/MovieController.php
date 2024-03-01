@@ -111,4 +111,23 @@ class MovieController extends Controller
             ]);
         }
     }
+
+    public function ListHistory(Request $request){
+        try {
+    
+            $wacthed = WatchHistory::where('user_id',$request->user_id)->get();
+
+            return response()->json([
+                'status'=> 'success',
+                'data' => $wacthed
+            ]);
+           
+
+        } catch (Exception $er) {
+            return response()->json([
+                'status'=> 'error',
+                'messages' => $er->getMessage()
+            ]);
+        }
+    }
 }

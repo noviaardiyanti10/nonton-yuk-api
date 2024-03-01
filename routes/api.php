@@ -24,5 +24,6 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::get('/movies', [MovieController::class, 'list']);
     Route::post('/verify', [MovieController::class, 'verifyRequirement']);
     Route::post('/create-history', [MovieController::class, 'CreateHistory']);
+    Route::post('/list-history', [MovieController::class, 'ListHistory']);
 });
 
